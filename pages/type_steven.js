@@ -40,14 +40,22 @@ export default class extends React.Component {
   submitStevenAttempt = () => {
     console.log(this.state.stevenField);
 
-    fetch('/.netlify/functions/test_function', {
+    // const headers = {
+    //   "Access-Control-Allow-Origin" : "*",
+    // };
+
+    fetch('http://localhost:9000/test_function', {
       method: "POST",
       body: JSON.stringify({
         steven_attempt: this.state.stevenField
       })
     })
     .then(response => {
-      if (!response.ok) {
+      return response.json();
+    })
+    .then(res => {
+      console.log(res)
+      if (!res.valid) {
         console.log('WRONG')
       } else {
         console.log('Nice')

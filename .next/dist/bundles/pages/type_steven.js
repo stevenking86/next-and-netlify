@@ -128,14 +128,21 @@ function (_React$Component) {
       enumerable: true,
       writable: true,
       value: function value() {
-        console.log(_this.state.stevenField);
-        fetch('/.netlify/functions/test_function', {
+        console.log(_this.state.stevenField); // const headers = {
+        //   "Access-Control-Allow-Origin" : "*",
+        // };
+
+        fetch('http://localhost:9000/test_function', {
           method: "POST",
           body: JSON.stringify({
             steven_attempt: _this.state.stevenField
           })
         }).then(function (response) {
-          if (!response.ok) {
+          return response.json();
+        }).then(function (res) {
+          console.log(res);
+
+          if (!res.valid) {
             console.log('WRONG');
           } else {
             console.log('Nice');

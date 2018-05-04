@@ -78,6 +78,9 @@ module.exports = {
       },
       '/success': {
         page: '/success'
+      },
+      '/type-steven': {
+        page: '/type_steven'
       }
     };
   }
