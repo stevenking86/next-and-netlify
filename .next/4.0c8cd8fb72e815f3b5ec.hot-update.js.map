@@ -1,0 +1,1 @@
+{"version":3,"file":"4.0c8cd8fb72e815f3b5ec.hot-update.js","sources":["webpack:///pages/index.js"],"sourcesContent":["export default () => <div>Welcome to next.js!</div>\n\n\n\n// WEBPACK FOOTER //\n// pages/index.js"],"mappings":";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AACA;AADA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;A","sourceRoot":""}
