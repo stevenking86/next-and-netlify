@@ -1,6 +1,11 @@
 const IndexPage = () => (
   <div>
-    <form name="contact" method="POST" data-netlify="true">
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      onSubmit={this.handleSubmit}
+    >
       <p>
         <label>Your Name: <input type="text" name="name" /></label>
       </p>
@@ -16,5 +21,16 @@ const IndexPage = () => (
     </form>
   </div>
 )
+
+const handleSubmit = e => {
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: encode({ "form-name": "contact", ...this.state })
+  })
+
+  e.preventDefault();
+}
+
 
 export default IndexPage

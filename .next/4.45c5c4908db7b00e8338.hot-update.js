@@ -1,39 +1,4 @@
-module.exports =
-
-        __NEXT_REGISTER_PAGE('/', function() {
-          var comp = 
-      webpackJsonp([4],{
-
-/***/ "./node_modules/webpack/buildin/harmony-module.js":
-/***/ (function(module, exports) {
-
-module.exports = function(originalModule) {
-	if(!originalModule.webpackPolyfill) {
-		var module = Object.create(originalModule);
-		// module.parent = undefined by default
-		if(!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		Object.defineProperty(module, "exports", {
-			enumerable: true,
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-
-/***/ }),
+webpackHotUpdate(4,{
 
 /***/ "./pages/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -52,10 +17,6 @@ var _this = this,
 
   enterModule && enterModule(module);
 })();
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var IndexPage = function IndexPage() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
@@ -136,19 +97,6 @@ var IndexPage = function IndexPage() {
   }, "Send"))));
 };
 
-var handleSubmit = function handleSubmit(e) {
-  fetch("/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    body: encode(_objectSpread({
-      "form-name": "contact"
-    }, _this.state))
-  });
-  e.preventDefault();
-};
-
 var _default = IndexPage;
 /* harmony default export */ __webpack_exports__["default"] = (_default);
 ;
@@ -163,7 +111,6 @@ var _default = IndexPage;
   }
 
   reactHotLoader.register(IndexPage, "IndexPage", "/Users/steven/Desktop/next-and-netlify/pages/index.js");
-  reactHotLoader.register(handleSubmit, "handleSubmit", "/Users/steven/Desktop/next-and-netlify/pages/index.js");
   reactHotLoader.register(_default, "default", "/Users/steven/Desktop/next-and-netlify/pages/index.js");
   leaveModule(module);
 })();
@@ -189,18 +136,7 @@ var _default = IndexPage;
   
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
 
-/***/ }),
-
-/***/ 3:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("./pages/index.js");
-
-
 /***/ })
 
-},[3])
-          return { page: comp.default }
-        })
-      ;
-//# sourceMappingURL=index.js.map
+})
+//# sourceMappingURL=4.45c5c4908db7b00e8338.hot-update.js.map
