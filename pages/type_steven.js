@@ -5,7 +5,9 @@ export default class extends React.Component {
     super();
 
     this.state = {
-      stevenField: ''
+      stevenField: '',
+      attempted: false,
+      correctAttempt: false
     };
   }
 
@@ -22,6 +24,17 @@ export default class extends React.Component {
           />
 
           <button onClick={this.submitStevenAttempt}>Submit</button>
+        </div>
+        <div>
+          {
+            this.state.attempted && this.state.correctAttempt &&
+            <h1>Nice. You successfully typed 'Steven'</h1>
+          }
+
+          {
+            this.state.attempted && !this.state.correctAttempt &&
+            <h1>You are so wrong.  You should be embarassed.</h1>
+          }
         </div>
       </div>
     )
@@ -57,8 +70,16 @@ export default class extends React.Component {
       console.log(res)
       if (!res.valid) {
         console.log('WRONG')
+        this.setState({
+          attempted: true,
+          correctAttempt: false
+        })
       } else {
         console.log('Nice')
+        this.setState({
+          attempted: true,
+          correctAttempt: true
+        })
       }
     })
   }

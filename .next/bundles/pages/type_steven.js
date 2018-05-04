@@ -112,14 +112,26 @@ function (_React$Component) {
 
           if (!res.valid) {
             console.log('WRONG');
+
+            _this.setState({
+              attempted: true,
+              correctAttempt: false
+            });
           } else {
             console.log('Nice');
+
+            _this.setState({
+              attempted: true,
+              correctAttempt: true
+            });
           }
         });
       }
     });
     _this.state = {
-      stevenField: ''
+      stevenField: '',
+      attempted: false,
+      correctAttempt: false
     };
     return _this;
   }
@@ -130,17 +142,17 @@ function (_React$Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 14
+          lineNumber: 16
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 17
         }
       }, " Type 'Steven' (exactly like that.)"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 18
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         placeholder: "Steven",
@@ -149,15 +161,30 @@ function (_React$Component) {
         onChange: this.handleStevenChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 19
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
         onClick: this.submitStevenAttempt,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 26
         }
-      }, "Submit")));
+      }, "Submit")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28
+        }
+      }, this.state.attempted && this.state.correctAttempt && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
+        }
+      }, "Nice. You successfully typed 'Steven'"), this.state.attempted && !this.state.correctAttempt && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36
+        }
+      }, "You are so wrong.  You should be embarassed.")));
     }
   }, {
     key: "__reactstandin__regenerateByEval",
