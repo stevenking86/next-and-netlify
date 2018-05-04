@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -129,6 +129,18 @@ function (_React$Component) {
       writable: true,
       value: function value() {
         console.log(_this.state.stevenField);
+        fetch('/.netlify/functions/test_function', {
+          method: "POST",
+          body: JSON.stringify({
+            steven_attempt: _this.state.stevenField
+          })
+        }).then(function (response) {
+          if (!response.ok) {
+            console.log('WRONG');
+          } else {
+            console.log('Nice');
+          }
+        });
       }
     });
     _this.state = {
@@ -181,7 +193,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/type_steven.js");

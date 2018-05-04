@@ -2,7 +2,7 @@ module.exports =
 
         __NEXT_REGISTER_PAGE('/type_steven', function() {
           var comp = 
-      webpackJsonp([6],{
+      webpackJsonp([4],{
 
 /***/ "./node_modules/webpack/buildin/harmony-module.js":
 /***/ (function(module, exports) {
@@ -97,6 +97,18 @@ function (_React$Component) {
       writable: true,
       value: function value() {
         console.log(_this.state.stevenField);
+        fetch('/.netlify/functions/test_function', {
+          method: "POST",
+          body: JSON.stringify({
+            steven_attempt: _this.state.stevenField
+          })
+        }).then(function (response) {
+          if (!response.ok) {
+            console.log('WRONG');
+          } else {
+            console.log('Nice');
+          }
+        });
       }
     });
     _this.state = {
@@ -189,7 +201,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/type_steven.js");
@@ -197,7 +209,7 @@ module.exports = __webpack_require__("./pages/type_steven.js");
 
 /***/ })
 
-},[5])
+},[3])
           return { page: comp.default }
         })
       ;
