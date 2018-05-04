@@ -1,4 +1,4 @@
-webpackHotUpdate(4,{
+webpackHotUpdate(5,{
 
 /***/ "./pages/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -7,9 +7,9 @@ webpackHotUpdate(4,{
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _this = this,
-    _jsxFileName = "/Users/steven/Desktop/next-and-netlify/pages/index.js";
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("./node_modules/next/link.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
+var _jsxFileName = "/Users/steven/Desktop/next-and-netlify/pages/index.js";
 
 
 (function () {
@@ -18,100 +18,96 @@ var _this = this,
   enterModule && enterModule(module);
 })();
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var IndexPage = function IndexPage() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 2
+      lineNumber: 4
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("form", {
     name: "contact",
     method: "POST",
     "data-netlify": "true",
-    onSubmit: _this.handleSubmit,
+    action: "/success",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 3
+      lineNumber: 5
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 10
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 11
     }
   }, "Your Name: ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
     type: "text",
     name: "name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 11
     }
   }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 13
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 14
     }
   }, "Your Email: ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
     type: "email",
     name: "email",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 14
     }
   }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 16
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 17
     }
   }, "Message: ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", {
     name: "message",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 17
     }
   }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
     type: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 20
     }
-  }, "Send"))));
-};
-
-var handleSubmit = function handleSubmit(e) {
-  fetch("/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    body: encode(_objectSpread({
-      "form-name": "contact"
-    }, _this.state))
-  });
-  e.preventDefault();
+  }, "Send"))), "Click", ' ', __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
+    href: "/success",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    }
+  }, "here")), ' ', "to read more");
 };
 
 var _default = IndexPage;
@@ -128,7 +124,6 @@ var _default = IndexPage;
   }
 
   reactHotLoader.register(IndexPage, "IndexPage", "/Users/steven/Desktop/next-and-netlify/pages/index.js");
-  reactHotLoader.register(handleSubmit, "handleSubmit", "/Users/steven/Desktop/next-and-netlify/pages/index.js");
   reactHotLoader.register(_default, "default", "/Users/steven/Desktop/next-and-netlify/pages/index.js");
   leaveModule(module);
 })();
@@ -157,4 +152,4 @@ var _default = IndexPage;
 /***/ })
 
 })
-//# sourceMappingURL=4.3983ed0ef22ea67e5c72.hot-update.js.map
+//# sourceMappingURL=5.ffd0dbe5bf167a569fc8.hot-update.js.map
