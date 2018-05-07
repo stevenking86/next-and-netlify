@@ -37,6 +37,7 @@ export default class extends React.Component {
   }
 
   sendPaymentDataToAnet = e => {
+    console.log(process);
     const authData = {
       clientKey: process.env.AUTHORIZE_PUBLIC_CLIENT_KEY,
       apiLoginID: process.env.AUTHORIZE_API_LOGIN_ID

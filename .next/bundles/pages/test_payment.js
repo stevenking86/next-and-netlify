@@ -82,6 +82,7 @@ function (_React$Component) {
       enumerable: true,
       writable: true,
       value: function value(e) {
+        console.log(process);
         var authData = {
           clientKey: process.env.AUTHORIZE_PUBLIC_CLIENT_KEY,
           apiLoginID: process.env.AUTHORIZE_API_LOGIN_ID
