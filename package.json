@@ -19,7 +19,7 @@
     "build": "next build && next export",
     "start": "next start",
     "start-functions": "netlify-lambda serve .",
-    "build-functions": "netlify-lambda build ."
+    "build-functions": "netlify-lambda build functions"
   },
   "author": "",
   "license": "ISC"
