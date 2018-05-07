@@ -72,7 +72,7 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./pages/type_steven.js":
+/***/ "./pages/test_payment.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -80,7 +80,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _default; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "/Users/steven/Desktop/next-and-netlify/pages/type_steven.js";
+var _jsxFileName = "/Users/steven/Desktop/next-and-netlify/pages/test_payment.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -109,113 +109,106 @@ function (_React$Component) {
     _classCallCheck(this, _default);
 
     _this = _possibleConstructorReturn(this, (_default.__proto__ || Object.getPrototypeOf(_default)).call(this));
-    Object.defineProperty(_assertThisInitialized(_this), "handleStevenChange", {
+    Object.defineProperty(_assertThisInitialized(_this), "sendPaymentDataToAnet", {
       configurable: true,
       enumerable: true,
       writable: true,
       value: function value(e) {
-        var steven = e.target.value;
-
-        if (steven !== "") {
-          _this.setState({
-            stevenField: steven
-          });
-        }
+        debugger;
       }
     });
-    Object.defineProperty(_assertThisInitialized(_this), "submitStevenAttempt", {
-      configurable: true,
-      enumerable: true,
-      writable: true,
-      value: function value() {
-        console.log(_this.state.stevenField); //locally: http://localhost:9000/test_function
-        //live: (not currently working) /.netlify/functions/test_function
-
-        fetch('http://localhost:9000/test_function', {
-          method: "POST",
-          body: JSON.stringify({
-            steven_attempt: _this.state.stevenField
-          })
-        }).then(function (response) {
-          return response.json();
-        }).then(function (res) {
-          console.log(res);
-
-          if (!res.valid) {
-            console.log('WRONG');
-
-            _this.setState({
-              attempted: true,
-              correctAttempt: false
-            });
-          } else {
-            console.log('Nice');
-
-            _this.setState({
-              attempted: true,
-              correctAttempt: true
-            });
-          }
-        });
-      }
-    });
-    _this.state = {
-      stevenField: '',
-      attempted: false,
-      correctAttempt: false
-    };
     return _this;
   }
 
   _createClass(_default, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var script = document.createElement("script");
+      script.src = "https://jstest.authorize.net/v1/Accept.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, {
     key: "render",
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 17
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
-        }
-      }, " Type 'Steven' (exactly like that.)"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 18
         }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
-        placeholder: "Steven",
-        type: "text",
-        id: "stevenField",
-        onChange: this.handleStevenChange,
+      }, "Test Payment Form"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("form", {
+        id: "paymentForm",
+        method: "POST",
+        action: "#",
+        onSubmit: "sendPaymentDataToAnet()",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 20
         }
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
-        onClick: this.submitStevenAttempt,
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+        type: "text",
+        name: "cardNumber",
+        id: "cardNumber",
+        placeholder: "cardNumber",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
+        }
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+        type: "text",
+        name: "expMonth",
+        id: "expMonth",
+        placeholder: "expMonth",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        }
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+        type: "text",
+        name: "expYear",
+        id: "expYear",
+        placeholder: "expYear",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 26
         }
-      }, "Submit")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+        type: "text",
+        name: "cardCode",
+        id: "cardCode",
+        placeholder: "cardCode",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        }
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+        type: "hidden",
+        name: "dataValue",
+        id: "dataValue",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 28
         }
-      }, this.state.attempted && this.state.correctAttempt && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+        type: "hidden",
+        name: "dataDescriptor",
+        id: "dataDescriptor",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 29
         }
-      }, "Nice. You successfully typed 'Steven'"), this.state.attempted && !this.state.correctAttempt && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
+        type: "submit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 30
         }
-      }, "You are so wrong.  You should be embarassed.")));
+      }, "Pay")));
     }
   }]);
 
@@ -229,7 +222,7 @@ function (_React$Component) {
 /***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./pages/type_steven.js");
+module.exports = __webpack_require__("./pages/test_payment.js");
 
 
 /***/ }),
@@ -242,4 +235,4 @@ module.exports = require("react");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=type_steven.js.map
+//# sourceMappingURL=test_payment.js.map

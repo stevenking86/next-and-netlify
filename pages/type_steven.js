@@ -66,13 +66,11 @@ export default class extends React.Component {
     .then(res => {
       console.log(res)
       if (!res.valid) {
-        console.log('WRONG')
         this.setState({
           attempted: true,
           correctAttempt: false
         })
       } else {
-        console.log('Nice')
         this.setState({
           attempted: true,
           correctAttempt: true

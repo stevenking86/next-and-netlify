@@ -81,6 +81,9 @@ module.exports = {
       },
       '/type-steven': {
         page: '/type_steven'
+      },
+      '/test-payment': {
+        page: '/test-payment'
       }
     };
   }
