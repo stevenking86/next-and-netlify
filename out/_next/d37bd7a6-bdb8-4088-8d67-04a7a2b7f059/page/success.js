@@ -1,0 +1,1 @@
+module.exports=__NEXT_REGISTER_PAGE("/success",function(){var e=webpackJsonp([5],{210:function(e,t,n){e.exports=n(211)},211:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:true});var r=n(5);var u=n.n(r);var a=function e(){return u.a.createElement("div",null,u.a.createElement("h1",null,"Form Submitted"))};t["default"]=a}},[210]);return{page:e.default}});
