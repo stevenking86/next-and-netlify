@@ -134,7 +134,7 @@ function (_React$Component) {
           cardData: cardData
         };
         console.log("About to dispatch data to authorize:", secureData);
-        Accept.dispatchData(secureData, responseHandler);
+        Accept.dispatchData(secureData, _this.responseHandler);
       }
     });
     Object.defineProperty(_assertThisInitialized(_this), "responseHandler", {
@@ -152,7 +152,7 @@ function (_React$Component) {
             i = i + 1;
           }
         } else {
-          paymentFormUpdate(response.opaqueData);
+          _this.paymentFormUpdate(response.opaqueData);
         }
       }
     });

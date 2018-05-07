@@ -58,7 +58,7 @@ export default class extends React.Component {
 
     console.log("About to dispatch data to authorize:", secureData);
 
-    Accept.dispatchData(secureData, responseHandler);
+    Accept.dispatchData(secureData, this.responseHandler);
   }
 
   responseHandler = response => {
@@ -74,7 +74,7 @@ export default class extends React.Component {
         i = i + 1;
       }
     } else {
-      paymentFormUpdate(response.opaqueData);
+      this.paymentFormUpdate(response.opaqueData);
     }
   }
 
