@@ -52,12 +52,9 @@ export default class extends React.Component {
 
   submitStevenAttempt = () => {
     console.log(this.state.stevenField);
-
-    // const headers = {
-    //   "Access-Control-Allow-Origin" : "*",
-    // };
-
-    fetch('http://localhost:9000/test_function', {
+    debugger;
+    //locally: http://localhost:9000/test_function
+    fetch('/.netlify/functions/test_function', {
       method: "POST",
       body: JSON.stringify({
         steven_attempt: this.state.stevenField

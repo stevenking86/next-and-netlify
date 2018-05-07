@@ -96,11 +96,10 @@ function (_React$Component) {
       enumerable: true,
       writable: true,
       value: function value() {
-        console.log(_this.state.stevenField); // const headers = {
-        //   "Access-Control-Allow-Origin" : "*",
-        // };
+        console.log(_this.state.stevenField);
+        debugger; //locally: http://localhost:9000/test_function
 
-        fetch('http://localhost:9000/test_function', {
+        fetch('/.netlify/functions/test_function', {
           method: "POST",
           body: JSON.stringify({
             steven_attempt: _this.state.stevenField
