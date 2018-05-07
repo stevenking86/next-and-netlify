@@ -83,7 +83,7 @@ module.exports = {
         page: '/type_steven'
       },
       '/test-payment': {
-        page: '/test-payment'
+        page: '/test_payment'
       }
     };
   }
