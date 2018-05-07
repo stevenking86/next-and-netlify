@@ -1,39 +1,4 @@
-module.exports =
-
-        __NEXT_REGISTER_PAGE('/test_payment', function() {
-          var comp = 
-      webpackJsonp([5],{
-
-/***/ "./node_modules/webpack/buildin/harmony-module.js":
-/***/ (function(module, exports) {
-
-module.exports = function(originalModule) {
-	if(!originalModule.webpackPolyfill) {
-		var module = Object.create(originalModule);
-		// module.parent = undefined by default
-		if(!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		Object.defineProperty(module, "exports", {
-			enumerable: true,
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-
-/***/ }),
+webpackHotUpdate(5,{
 
 /***/ "./pages/test_payment.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -82,74 +47,7 @@ function (_React$Component) {
       enumerable: true,
       writable: true,
       value: function value(e) {
-        var authData = {
-          clientKey: AUTHORIZE_PUBLIC_CLIENT_KEY,
-          apiLoginID: AUTHORIZE_API_LOGIN_ID
-        };
-        var _this$state = _this.state,
-            cardNumber = _this$state.cardNumber,
-            cardCode = _this$state.cardCode,
-            expMonth = _this$state.expMonth,
-            expYear = _this$state.expYear;
-        var cardData = {
-          cardNumber: cardNumber,
-          month: expMonth,
-          year: expYear,
-          cardCode: cardCode
-        };
-        var secureData = {
-          authData: authData,
-          cardData: cardData
-        };
-        console.log("About to dispatch data to authorize:", secureData);
-        Accept.dispatchData(secureData, responseHandler);
-      }
-    });
-    Object.defineProperty(_assertThisInitialized(_this), "responseHandler", {
-      configurable: true,
-      enumerable: true,
-      writable: true,
-      value: function value(response) {
-        console.log("responseHandler response:", response);
-
-        if (response.messages.resultCode === "Error") {
-          var i = 0;
-
-          while (i < response.messages.message.length) {
-            console.log(response.messages.message[i].code + ": " + response.messages.message[i].text);
-            i = i + 1;
-          }
-        } else {
-          paymentFormUpdate(response.opaqueData);
-        }
-      }
-    });
-    Object.defineProperty(_assertThisInitialized(_this), "paymentFormUpdate", {
-      configurable: true,
-      enumerable: true,
-      writable: true,
-      value: function value(opaqueData) {
-        var dataDescriptor = opaqueData.dataDescriptor;
-        var dataValue = opaqueData.dataValue;
-        console.log("SUCCESS:", dataDescriptor, dataValue); // document.getElementById("dataDescriptor").value = opaqueData.dataDescriptor;
-        // document.getElementById("dataValue").value = opaqueData.dataValue;
-      }
-    });
-    Object.defineProperty(_assertThisInitialized(_this), "handleValueChange", {
-      configurable: true,
-      enumerable: true,
-      writable: true,
-      value: function value(e) {
         debugger;
-        var update = {};
-        var value = e.target.value;
-        var field = e.target.id;
-        update[field] = value;
-        debugger;
-
-        if (value !== "") {
-          _this.setState(update);
-        }
       }
     });
     _this.state = {
@@ -182,51 +80,50 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 25
         }
-      }, "Test Payment Form"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "testForm",
+      }, "Test Payment Form"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("form", {
+        id: "paymentForm",
+        method: "POST",
+        action: "#",
+        onSubmit: "sendPaymentDataToAnet()",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 27
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "text",
         name: "cardNumber",
         id: "cardNumber",
-        onChange: this.handleValueChange,
         placeholder: "cardNumber",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 31
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "text",
         name: "expMonth",
         id: "expMonth",
-        onChange: this.handleValueChange,
         placeholder: "expMonth",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 32
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "text",
         name: "expYear",
         id: "expYear",
-        onChange: this.handleValueChange,
         placeholder: "expYear",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 33
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "text",
         name: "cardCode",
         id: "cardCode",
-        onChange: this.handleValueChange,
         placeholder: "cardCode",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 34
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "hidden",
@@ -234,7 +131,7 @@ function (_React$Component) {
         id: "dataValue",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 35
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "hidden",
@@ -242,14 +139,13 @@ function (_React$Component) {
         id: "dataDescriptor",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 36
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
         type: "submit",
-        onClick: this.sendPaymentDataToAnet.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 37
         }
       }, "Pay")));
     }
@@ -300,18 +196,7 @@ function (_React$Component) {
   
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
 
-/***/ }),
-
-/***/ 4:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("./pages/test_payment.js");
-
-
 /***/ })
 
-},[4])
-          return { page: comp.default }
-        })
-      ;
-//# sourceMappingURL=test_payment.js.map
+})
+//# sourceMappingURL=5.af622224912b2214de66.hot-update.js.map
