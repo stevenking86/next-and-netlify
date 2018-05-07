@@ -53,7 +53,8 @@ export default class extends React.Component {
   submitStevenAttempt = () => {
     console.log(this.state.stevenField);
     //locally: http://localhost:9000/test_function
-    fetch('/.netlify/functions/test_function', {
+    //live: (not currently working) /.netlify/functions/test_function
+    fetch('http://localhost:9000/test_function', {
       method: "POST",
       body: JSON.stringify({
         steven_attempt: this.state.stevenField
