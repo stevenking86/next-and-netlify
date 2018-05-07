@@ -37,10 +37,10 @@ export default class extends React.Component {
   }
 
   sendPaymentDataToAnet = e => {
-    console.log(process);
+    //sandbox keys, okay to be public for now :-)
     const authData = {
-      clientKey: process.env.AUTHORIZE_PUBLIC_CLIENT_KEY,
-      apiLoginID: process.env.AUTHORIZE_API_LOGIN_ID
+      clientKey: "2stxUEPKXWc92j33PtRd75FXzKAS5E7vKbRzpd9Wmcv7jfKQqk7D37v33mG9cb24",
+      apiLoginID: "9Hv89Ghw"
     };
 
     const {cardNumber, cardCode, expMonth, expYear} = this.state;

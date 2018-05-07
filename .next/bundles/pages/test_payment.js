@@ -40,7 +40,7 @@ module.exports = function(originalModule) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function(module, process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 var _jsxFileName = "/Users/steven/Desktop/next-and-netlify/pages/test_payment.js";
 
@@ -82,10 +82,10 @@ function (_React$Component) {
       enumerable: true,
       writable: true,
       value: function value(e) {
-        console.log(process);
+        //sandbox keys, okay to be public for now :-)
         var authData = {
-          clientKey: process.env.AUTHORIZE_PUBLIC_CLIENT_KEY,
-          apiLoginID: process.env.AUTHORIZE_API_LOGIN_ID
+          clientKey: "2stxUEPKXWc92j33PtRd75FXzKAS5E7vKbRzpd9Wmcv7jfKQqk7D37v33mG9cb24",
+          apiLoginID: "9Hv89Ghw"
         };
         var _this$state = _this.state,
             cardNumber = _this$state.cardNumber,
@@ -299,7 +299,7 @@ function (_React$Component) {
       }
     })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/test_payment")
   
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module), __webpack_require__("./node_modules/node-libs-browser/node_modules/process/browser.js")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ }),
 
