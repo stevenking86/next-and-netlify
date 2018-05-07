@@ -12,15 +12,14 @@
     "react-dom": "^16.3.2",
     "util.promisify": "^1.0.0"
   },
-  "devDependencies": {
-    "netlify-lambda": "^0.4.0"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
     "build": "next build && next export",
     "start": "next start",
-    "start-functions": "netlify-lambda serve ."
+    "start-functions": "netlify-lambda serve .",
+    "build-functions": "netlify-lambda build ."
   },
   "author": "",
   "license": "ISC"
