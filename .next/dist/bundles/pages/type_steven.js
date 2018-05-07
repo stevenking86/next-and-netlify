@@ -128,8 +128,7 @@ function (_React$Component) {
       enumerable: true,
       writable: true,
       value: function value() {
-        console.log(_this.state.stevenField);
-        debugger; //locally: http://localhost:9000/test_function
+        console.log(_this.state.stevenField); //locally: http://localhost:9000/test_function
 
         fetch('/.netlify/functions/test_function', {
           method: "POST",
