@@ -75,26 +75,48 @@ export default class extends React.Component {
         i = i + 1;
       }
     } else {
-      this.paymentFormUpdate(response.opaqueData);
+      this.submitSuccessfulResponse(response.opaqueData);
     }
   }
 
-  paymentFormUpdate = opaqueData => {
+  submitSuccessfulResponse = opaqueData => {
     const dataDescriptor = opaqueData.dataDescriptor;
     const dataValue = opaqueData.dataValue;
     console.log("SUCCESS:", dataDescriptor, dataValue)
-    // document.getElementById("dataDescriptor").value = opaqueData.dataDescriptor;
-    // document.getElementById("dataValue").value = opaqueData.dataValue;
+
+    fetch("https://apitest.authorize.net/xml/v1/request.api", {
+      body: JSON.stringify({
+        createTransactionRequest: {
+          merchantAuthentication: {
+            name: "9Hv89Ghw",
+            transactionKey: "55u442u9H87Q9zLa"
+          },
+          refId: "123456",
+          transactionRequest: {
+            transactionType: "authCaptureTransaction",
+            amount: "2000",
+            payment: {
+              opaqueData: {
+                dataDescriptor: dataDescriptor,
+                dataValue: dataValue
+              }
+            }
+          }
+        }
+      }),
+      method: 'POST'
+    }).then(response => response.json())
+    .then(res => console.log(res))
+    )
   }
 
   handleValueChange = e => {
-    debugger;
     let update = {}
     const value = e.target.value
     const field = e.target.id
 
     update[field] = value
-    debugger;
+
     if (value !== "") {
       this.setState(update);
     }
