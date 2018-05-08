@@ -8,7 +8,8 @@ export default class extends React.Component {
       cardNumber: '',
       expMonth: '',
       expYear: '',
-      cardCode: ''
+      cardCode: '',
+      payLater: false
     };
   }
 
@@ -28,6 +29,8 @@ export default class extends React.Component {
           <input type="text" name="expMonth" id="expMonth" onChange={this.handleValueChange} placeholder="expMonth"/>
           <input type="text" name="expYear" id="expYear" onChange={this.handleValueChange} placeholder="expYear"/>
           <input type="text" name="cardCode" id="cardCode" onChange={this.handleValueChange} placeholder="cardCode"/>
+          <span>Check Box to Pay Later:</span>
+          <input type="checkbox" name="payLater" id="payLater" onChange={this.handleCheckbox} />
           <input type="hidden" name="dataValue" id="dataValue" />
           <input type="hidden" name="dataDescriptor" id="dataDescriptor" />
           <button type="submit" onClick={this.sendPaymentDataToAnet.bind(this)}>Pay</button>
@@ -84,6 +87,8 @@ export default class extends React.Component {
     const dataValue = opaqueData.dataValue;
     console.log("SUCCESS:", dataDescriptor, dataValue)
 
+    console.log("Paying Later?", this.state.payLater);
+
     fetch("https://apitest.authorize.net/xml/v1/request.api", {
       body: JSON.stringify({
         createTransactionRequest: {
@@ -93,7 +98,7 @@ export default class extends React.Component {
           },
           refId: "123456",
           transactionRequest: {
-            transactionType: "authCaptureTransaction",
+            transactionType: this.state.payLater ? "authOnlyTransaction" : "authCaptureTransaction",
             amount: "2000",
             payment: {
               opaqueData: {
@@ -118,5 +123,9 @@ export default class extends React.Component {
     if (value !== "") {
       this.setState(update);
     }
+  }
+
+  handleCheckbox = e => {
+    this.setState({payLater: !this.state.payLater})
   }
 }

@@ -1,4 +1,4 @@
-webpackHotUpdate(4,{
+webpackHotUpdate(5,{
 
 /***/ "./pages/test_payment.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -98,6 +98,7 @@ function (_React$Component) {
         var dataDescriptor = opaqueData.dataDescriptor;
         var dataValue = opaqueData.dataValue;
         console.log("SUCCESS:", dataDescriptor, dataValue);
+        console.log("Paying Later?", _this.state.payLater);
         fetch("https://apitest.authorize.net/xml/v1/request.api", {
           body: JSON.stringify({
             createTransactionRequest: {
@@ -107,7 +108,7 @@ function (_React$Component) {
               },
               refId: "123456",
               transactionRequest: {
-                transactionType: "authCaptureTransaction",
+                transactionType: _this.state.payLater ? "authOnlyTransaction" : "authCaptureTransaction",
                 amount: "2000",
                 payment: {
                   opaqueData: {
@@ -139,11 +140,22 @@ function (_React$Component) {
         }
       }
     });
+    Object.defineProperty(_assertThisInitialized(_this), "handleCheckbox", {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function value(e) {
+        _this.setState({
+          payLater: !_this.state.payLater
+        });
+      }
+    });
     _this.state = {
       cardNumber: '',
       expMonth: '',
       expYear: '',
-      cardCode: ''
+      cardCode: '',
+      payLater: false
     };
     return _this;
   }
@@ -162,18 +174,18 @@ function (_React$Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 25
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 26
         }
       }, "Test Payment Form"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "testForm",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 27
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "text",
@@ -183,7 +195,7 @@ function (_React$Component) {
         placeholder: "cardNumber",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 28
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "text",
@@ -193,7 +205,7 @@ function (_React$Component) {
         placeholder: "expMonth",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 29
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "text",
@@ -203,7 +215,7 @@ function (_React$Component) {
         placeholder: "expYear",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 30
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "text",
@@ -213,7 +225,21 @@ function (_React$Component) {
         placeholder: "cardCode",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 31
+        }
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32
+        }
+      }, "Check Box to Pay Later:"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+        type: "checkbox",
+        name: "payLater",
+        id: "payLater",
+        onChange: this.handleCheckbox,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "hidden",
@@ -221,7 +247,7 @@ function (_React$Component) {
         id: "dataValue",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 34
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "hidden",
@@ -229,14 +255,14 @@ function (_React$Component) {
         id: "dataDescriptor",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 35
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
         type: "submit",
         onClick: this.sendPaymentDataToAnet.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 36
         }
       }, "Pay")));
     }
@@ -290,4 +316,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=4.64743e6da2b9a0e86960.hot-update.js.map
+//# sourceMappingURL=5.b0f3d8f522e61442edfe.hot-update.js.map
