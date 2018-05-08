@@ -105,9 +105,7 @@ export default class extends React.Component {
         }
       }),
       method: 'POST'
-    }).then(response => response.json())
-    .then(res => console.log(res))
-    )
+    }).then(response => console.log(response.json()))
   }
 
   handleValueChange = e => {
